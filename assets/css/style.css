@@ -3,7 +3,7 @@
     --color-two: #794AFF;
     --para-color: rgb(159, 159, 159);
     --green-color: rgb(0, 255, 0);
-    --bg-background: #222222;
+    --bg-background: #000000b3;
     --border-color: #353535;
 }
 
@@ -23,7 +23,13 @@ li {
 }
 
 body {
+    background: rgb(30,7,97);
+background: linear-gradient(90deg, rgba(30,7,97,1) 0%, rgba(41,15,116,1) 38%, rgba(58,22,159,1) 100%);
     font-family: "Poppins", sans-serif;
+}
+.shadow {
+    box-shadow: 0 0 50px #00000078 !important;
+    border: 1px solid #181818;
 }
 
 .text-para {
@@ -36,6 +42,7 @@ body {
 
 .bg-color {
     background: var(--bg-background);
+    backdrop-filter: blur(10px);
 }
 
 .transition {
@@ -103,6 +110,8 @@ ul#tabs-nav .active {
     width: 70px;
     height: 70px;
 }
+
+
 
 @media only screen and (max-width:767px) {
     .experience-icon {
