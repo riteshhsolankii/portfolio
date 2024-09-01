@@ -36,3 +36,11 @@ $('#tabs-nav li').click(function() {
     $(activeTab).fadeIn();
     return false;
 });
+
+
+
+AOS.init();
+
+
+
+
