@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --color-two: #794AFF;
+    --para-color: rgb(159, 159, 159);
+    --green-color: rgb(0, 255, 0);
+    --bg-background: #222222;
+    --border-color: #353535;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.text-para {
+    color: var(--para-color);
+}
+
+.border-main {
+    border: 1px solid var(--border-color);
+}
+
+.bg-color {
+    background: var(--bg-background);
+}
+
+.transition {
+    transition: all 0.5s ease;
+}
+
+.banner-image {
+    max-width: 300px;
+    height: 300px;
+}
+
+.banner-social li a {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.banner-social li a:hover {
+    color: var(--color-two) !important;
+}
+
+.freelancing i {
+    color: var(--green-color);
+}
+
+.btn-main {
+    border: 1px solid transparent;
+    background-color: var(--color-two);
+}
+
+.btn-main:hover {
+    background-color: var(--color-one);
+}
+
+.main-heading {
+    font-size: 36px;
+    line-height: 50px;
+}
+
+.skills-inner img {
+    max-width: 40px;
+}
+
+.work-heading {
+    max-width: 800px;
+}
+
+.work-inner:hover {
+    border-color: var(--color-two);
+}
+
+.work-inner:hover .work-inner-image img {
+    transform: scale(1.1);
+}
+
+ul#tabs-nav li:hover {
+    background-color: var(--color-two) !important;
+}
+
+ul#tabs-nav .active {
+    background: var(--color-two) !important;
+}
+
+.experience-icon {
+    background-color: var(--color-two);
+    width: 70px;
+    height: 70px;
+}
+
+@media only screen and (max-width:767px) {
+    .experience-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
