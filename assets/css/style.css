@@ -110,6 +110,11 @@ ul#tabs-nav .active {
     width: 70px;
     height: 70px;
 }
+.information i {
+    color: var(--color-two);
+}
+
+
 
 
 
