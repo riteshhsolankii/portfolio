@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050816;
+  --primary: #7c3aed;
+  --accent: #06b6d4;
+  --secondary: #8b5cf6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #ffffff;
+}
+
+/* Slim, on-brand scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7c3aed, #06b6d4);
+  border-radius: 8px;
+}
+
+@layer components {
+  .glass {
+    @apply border border-border bg-card shadow-glass backdrop-blur-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply px-6 py-12 sm:px-10 md:py-16 lg:px-16;
+  }
+}
+
+/* Hide native cursor only on fine pointers when custom cursor is active */
+@media (pointer: fine) {
+  body[data-custom-cursor="true"] {
+    cursor: none;
+  }
+  body[data-custom-cursor="true"] a,
+  body[data-custom-cursor="true"] button {
+    cursor: none;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
