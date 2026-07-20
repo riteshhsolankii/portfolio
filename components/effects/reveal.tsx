@@ -11,7 +11,6 @@ const directions = {
   none: { x: 0, y: 0 },
 } as const;
 
-/** Fade + slide element into view once, when it scrolls into the viewport. */
 export default function Reveal({
   children,
   direction = "up",

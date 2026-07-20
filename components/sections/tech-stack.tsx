@@ -3,47 +3,66 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { IconType } from "react-icons";
-import { FiBox } from "react-icons/fi";
+import { FiBox, FiHeart, FiLayout, FiGrid, FiImage, FiPenTool } from "react-icons/fi";
 import { RiOpenaiFill } from "react-icons/ri";
 import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiJquery,
+  SiBootstrap,
+  SiTailwindcss,
   SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiTailwindcss,
-  SiFramer,
   SiRedux,
-  SiLangchain,
-  SiHuggingface,
-  SiN8N,
+  SiGooglegemini,
+  SiCursor,
+  SiClaude,
+  SiGithubcopilot,
   SiGit,
   SiFigma,
   SiVscodium,
-  SiShopify,
+  SiSublimetext,
   SiWordpress,
+  SiShopify,
+  SiElementor,
+  SiOxygen,
 } from "react-icons/si";
 import { TECH_STACK } from "@/lib/data";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/effects/reveal";
 import { cn } from "@/lib/utils";
 
-/* Explicit icon map keeps the bundle lean — a namespace import of
-   react-icons/si would pull in the entire icon set. */
 const ICONS: Record<string, IconType> = {
-  RiOpenaiFill,
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiJquery,
+  SiBootstrap,
+  SiTailwindcss,
   SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiTailwindcss,
-  SiFramer,
   SiRedux,
-  SiLangchain,
-  SiHuggingface,
-  SiN8N,
+  RiOpenaiFill,
+  SiGooglegemini,
+  SiCursor,
+  SiClaude,
+  SiGithubcopilot,
   SiGit,
   SiFigma,
   SiVscodium,
-  SiShopify,
+  SiSublimetext,
   SiWordpress,
+  SiShopify,
+  SiElementor,
+  SiOxygen,
+  FiHeart,
+  FiLayout,
+  FiGrid,
+  FiImage,
+  FiPenTool,
 };
 
 export default function TechStack() {
@@ -98,13 +117,11 @@ export default function TechStack() {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.06, duration: 0.35 }}
-                whileHover={{ y: -6, scale: 1.04 }}
                 className="glass group flex flex-col items-center gap-3 rounded-2xl px-4 py-7 transition-colors hover:border-primary/50"
-                data-cursor-hover
               >
                 <Icon
                   size={34}
-                  className="text-white/70 transition-all duration-300 group-hover:scale-110 group-hover:text-accent"
+                  className="text-white/70 transition-all duration-300 group-hover:text-accent"
                   aria-hidden
                 />
                 <span className="text-center text-sm font-medium text-white/80 group-hover:text-white">

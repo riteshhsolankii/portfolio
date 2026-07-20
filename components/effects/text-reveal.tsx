@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-/** Reveals text word by word as it enters the viewport. */
 export default function TextReveal({
   text,
   className,

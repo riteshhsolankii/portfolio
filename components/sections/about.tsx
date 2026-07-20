@@ -14,7 +14,6 @@ import SectionHeading from "@/components/ui/section-heading";
 import GlassCard from "@/components/ui/glass-card";
 import Reveal from "@/components/effects/reveal";
 
-/** Counts from 0 to `value` when scrolled into view. */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
@@ -80,14 +79,17 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <GlassCard className="flex h-full flex-col justify-between gap-6 bg-gradient-to-br from-primary/15 to-accent/10 p-8">
+            <GlassCard className="flex h-full flex-col justify-between gap-6 bg-accent/10 p-8">
               <p className="font-heading text-2xl font-semibold leading-snug text-white">
                 “Great software feels effortless.
                 <span className="text-gradient"> That takes real effort.”</span>
               </p>
               <div>
                 <p className="font-medium text-white">{SITE.name}</p>
-                <p className="text-sm text-muted">{SITE.location}</p>
+                <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted">
+                  <span aria-hidden>{SITE.flag}</span>
+                  {SITE.location}
+                </p>
               </div>
             </GlassCard>
           </Reveal>

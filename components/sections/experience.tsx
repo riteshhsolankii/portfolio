@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { FiBriefcase, FiCheckCircle } from "react-icons/fi";
+import { FiBriefcase, FiCheckCircle, FiMapPin } from "react-icons/fi";
 import { EXPERIENCE } from "@/lib/data";
 import SectionHeading from "@/components/ui/section-heading";
 import GlassCard from "@/components/ui/glass-card";
@@ -27,10 +27,9 @@ export default function Experience() {
         />
 
         <div ref={ref} className="relative">
-          {/* Timeline spine — fills as you scroll */}
           <div className="absolute left-5 top-0 h-full w-px bg-white/10 md:left-1/2" aria-hidden>
             <motion.div
-              className="h-full w-full origin-top bg-gradient-to-b from-primary via-secondary to-accent"
+              className="h-full w-full origin-top bg-accent"
               style={{ scaleY: lineProgress }}
             />
           </div>
@@ -46,7 +45,6 @@ export default function Experience() {
                     isLeft ? "md:justify-start" : "md:justify-end"
                   )}
                 >
-                  {/* Node */}
                   <span
                     className="absolute left-5 top-8 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-primary/50 bg-background shadow-glow md:left-1/2 md:top-1/2 md:-translate-y-1/2"
                     aria-hidden
@@ -67,6 +65,10 @@ export default function Experience() {
                       </span>
                       <h3 className="font-heading text-xl font-bold text-white">{job.role}</h3>
                       <p className="mt-0.5 text-sm font-medium text-secondary">{job.company}</p>
+                      <p className="mt-1 flex items-center gap-1.5 text-xs text-white/50">
+                        <FiMapPin size={12} className="shrink-0" />
+                        {job.location}
+                      </p>
                       <ul className="mt-4 space-y-2.5">
                         {job.achievements.map((achievement) => (
                           <li
