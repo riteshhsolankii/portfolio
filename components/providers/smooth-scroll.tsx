@@ -3,10 +3,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/**
- * Wraps the page in Lenis smooth scrolling.
- * `anchors: true` keeps in-page #links working with the smooth easing.
- */
 export default function SmoothScroll({
   children,
 }: {

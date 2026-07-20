@@ -9,7 +9,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-r from-primary to-secondary text-white shadow-glow hover:shadow-glow-accent hover:brightness-110",
+    "bg-accent text-background shadow-glow-accent hover:brightness-110",
   outline:
     "border border-border bg-card text-white backdrop-blur-xl hover:border-primary/60 hover:bg-primary/10",
   ghost: "text-white/80 hover:bg-white/5 hover:text-white",
@@ -37,7 +37,6 @@ type ButtonAsLink = CommonProps &
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-/** shadcn-style polymorphic button — renders a Next <Link> when `href` is set. */
 export function Button({
   variant = "primary",
   size = "default",

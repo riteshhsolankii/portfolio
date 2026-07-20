@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #050816;
-  --primary: #7c3aed;
-  --accent: #06b6d4;
-  --secondary: #8b5cf6;
+  --background: #000000;
+  --primary: #9cf400;
+  --accent: #9cf400;
+  --secondary: #9cf400;
 }
 
 html {
@@ -34,19 +34,18 @@ body {
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.4);
-  color: #ffffff;
+  background: #9cf400;
+  color: #000000;
 }
 
-/* Slim, on-brand scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7c3aed, #06b6d4);
+  background: #9cf400;
   border-radius: 8px;
 }
 
@@ -56,7 +55,7 @@ body {
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    @apply text-accent;
   }
 
   .section-padding {
@@ -64,18 +63,6 @@ body {
   }
 }
 
-/* Hide native cursor only on fine pointers when custom cursor is active */
-@media (pointer: fine) {
-  body[data-custom-cursor="true"] {
-    cursor: none;
-  }
-  body[data-custom-cursor="true"] a,
-  body[data-custom-cursor="true"] button {
-    cursor: none;
-  }
-}
-
-/* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
