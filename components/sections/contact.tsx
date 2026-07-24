@@ -16,7 +16,7 @@ const socials = [
 export default function Contact() {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-[1440px]">
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something great"
@@ -27,10 +27,10 @@ export default function Contact() {
           <Reveal>
             <GlassCard hover={false} className="flex h-full flex-col justify-between gap-8 p-8">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-white">
+                <h3 className="font-heading text-2xl font-bold text-foreground">
                   Have a project in mind?
                 </h3>
-                <p className="mt-3 leading-relaxed text-white/60">
+                <p className="mt-3 leading-relaxed text-foreground/60">
                   Whether it&apos;s a new website, a WordPress build or a React app —
                   let&apos;s make it fast, beautiful and built to convert.
                 </p>
@@ -66,8 +66,8 @@ export default function Contact() {
                     <Icon size={22} />
                   </span>
                   <div>
-                    <p className="font-heading font-semibold text-white">{label}</p>
-                    <p className="text-sm text-white/50">{handle}</p>
+                    <p className="font-heading font-semibold text-foreground">{label}</p>
+                    <p className="text-sm text-foreground/50">{handle}</p>
                   </div>
                 </a>
               ))}

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { IconType } from "react-icons";
@@ -70,7 +68,7 @@ export default function TechStack() {
 
   return (
     <section id="stack" className="section-padding relative">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[1440px]">
         <SectionHeading
           eyebrow="Tech Stack"
           title="Tools I ship with"
@@ -92,8 +90,8 @@ export default function TechStack() {
                 className={cn(
                   "rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300",
                   active === i
-                    ? "border-primary/60 bg-primary/20 text-white shadow-glow"
-                    : "border-border bg-card text-white/60 hover:border-primary/40 hover:text-white"
+                    ? "border-primary/60 bg-primary/20 text-foreground shadow-glow"
+                    : "border-border bg-card text-foreground/60 hover:border-primary/40 hover:text-foreground"
                 )}
               >
                 {category.title}
@@ -121,10 +119,10 @@ export default function TechStack() {
               >
                 <Icon
                   size={34}
-                  className="text-white/70 transition-all duration-300 group-hover:text-accent"
+                  className="text-foreground/70 transition-all duration-300 group-hover:text-accent"
                   aria-hidden
                 />
-                <span className="text-center text-sm font-medium text-white/80 group-hover:text-white">
+                <span className="text-center text-sm font-medium text-foreground/80 group-hover:text-foreground">
                   {tech.name}
                 </span>
               </motion.div>

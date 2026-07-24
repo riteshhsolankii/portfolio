@@ -2,29 +2,31 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./app/**/*.{ts,tsx}",
+    "./index.html",
+    "./src/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./lib/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "#000000",
+        background: "rgb(var(--bg) / <alpha-value>)",
+        foreground: "rgb(var(--fg) / <alpha-value>)",
         primary: {
-          DEFAULT: "#9CF400",
-          foreground: "#000000",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          foreground: "rgb(var(--accent-fg) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#9CF400",
-          foreground: "#000000",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          foreground: "rgb(var(--accent-fg) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "#9CF400",
-          foreground: "#000000",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          foreground: "rgb(var(--accent-fg) / <alpha-value>)",
         },
-        card: "rgba(255,255,255,0.05)",
-        border: "rgba(255,255,255,0.10)",
-        muted: "rgba(255,255,255,0.60)",
+        card: "rgb(var(--fg) / 0.05)",
+        border: "rgb(var(--fg) / 0.07)",
+        muted: "rgb(var(--fg) / 0.6)",
       },
       fontFamily: {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],

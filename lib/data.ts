@@ -18,11 +18,13 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Stack", href: "/#stack" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Blog", href: "/blog" },
+  { label: "Author", href: "/author" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const ABOUT = {
@@ -215,6 +217,133 @@ export const EXPERIENCE: Experience[] = [
       "Converted Figma/PSD designs to HTML",
       "Made websites fully responsive",
       "Converted Figma/PSD to Elementor and Divi themes",
+    ],
+  },
+];
+
+export type BlogBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string }
+  | { type: "list"; title?: string; tone?: "pro" | "con" | "default"; items: string[] }
+  | { type: "table"; columns: string[]; rows: string[][] }
+  | { type: "callout"; text: string };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  emoji: string;
+  image?: string;
+  category: string;
+  tags: string[];
+  content: BlogBlock[];
+};
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "cursor-ai-vs-github-copilot",
+    title: "Cursor AI vs GitHub Copilot: Which AI Coding Assistant is Better?",
+    excerpt:
+      "Both boost productivity, but they excel in different areas. A hands-on comparison of Cursor AI and GitHub Copilot for real-world development.",
+    date: "2026-07-20",
+    readTime: "6 min read",
+    emoji: "🤖",
+    image: "/blog/cursorvscopilot.jpeg",
+    category: "AI Tools",
+    tags: ["AI", "Tools", "Productivity"],
+    content: [
+      {
+        type: "paragraph",
+        text: "AI coding assistants have transformed software development. Two of the most popular options today are Cursor AI and GitHub Copilot. Both improve productivity, but they excel in different areas.",
+      },
+      { type: "heading", text: "Cursor AI" },
+      {
+        type: "paragraph",
+        text: "Cursor AI is an AI-first code editor built on VS Code. It understands your entire codebase, making it ideal for debugging, refactoring, and working across multiple files.",
+      },
+      {
+        type: "list",
+        title: "Pros",
+        tone: "pro",
+        items: [
+          "Excellent codebase understanding",
+          "Multi-file editing",
+          "AI-powered debugging",
+          "Great for React and TypeScript projects",
+        ],
+      },
+      {
+        type: "list",
+        title: "Cons",
+        tone: "con",
+        items: ["Slight learning curve for beginners"],
+      },
+      { type: "heading", text: "GitHub Copilot" },
+      {
+        type: "paragraph",
+        text: "GitHub Copilot integrates directly with VS Code, Visual Studio, JetBrains IDEs, and GitHub. It's known for fast code completion and strong GitHub integration.",
+      },
+      {
+        type: "list",
+        title: "Pros",
+        tone: "pro",
+        items: [
+          "Excellent autocomplete",
+          "Great GitHub integration",
+          "AI code reviews",
+          "Easy to use",
+        ],
+      },
+      {
+        type: "list",
+        title: "Cons",
+        tone: "con",
+        items: ["Limited project-wide context compared to Cursor"],
+      },
+      { type: "heading", text: "Quick Comparison" },
+      {
+        type: "table",
+        columns: ["Feature", "Cursor AI", "GitHub Copilot"],
+        rows: [
+          ["Code Completion", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"],
+          ["Codebase Understanding", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐☆"],
+          ["Debugging", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐☆"],
+          ["Multi-file Editing", "✅", "Limited"],
+          ["GitHub Integration", "⭐⭐⭐", "⭐⭐⭐⭐⭐"],
+        ],
+      },
+      { type: "heading", text: "Which One Should You Choose?" },
+      {
+        type: "list",
+        title: "✅ Choose Cursor AI if you:",
+        items: [
+          "Build React or Next.js applications",
+          "Work on large codebases",
+          "Need advanced debugging and refactoring",
+        ],
+      },
+      {
+        type: "list",
+        title: "✅ Choose GitHub Copilot if you:",
+        items: [
+          "Use GitHub daily",
+          "Want fast code suggestions",
+          "Work in team-based projects",
+        ],
+      },
+      { type: "heading", text: "Final Verdict" },
+      {
+        type: "paragraph",
+        text: "Both tools are excellent, but they serve different needs.",
+      },
+      { type: "callout", text: "🏆 Best for React & Frontend Developers: Cursor AI" },
+      { type: "callout", text: "🏆 Best for Teams & GitHub Workflows: GitHub Copilot" },
+      {
+        type: "paragraph",
+        text: "If you're an individual developer looking for an AI-first coding experience, Cursor AI is the better choice. If your workflow revolves around GitHub and collaboration, GitHub Copilot is the smarter pick.",
+      },
     ],
   },
 ];

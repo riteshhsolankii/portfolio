@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import {
   animate,
@@ -28,7 +26,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="font-heading text-4xl font-bold text-white md:text-5xl">
+    <span ref={ref} className="font-heading text-4xl font-bold text-foreground md:text-5xl">
       <motion.span>{rounded}</motion.span>
       <span className="text-gradient">{suffix}</span>
     </span>
@@ -38,7 +36,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 export default function About() {
   return (
     <section id="about" className="section-padding relative">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[1440px]">
         <SectionHeading
           eyebrow="About Me"
           title="Engineer by craft, designer at heart"
@@ -63,13 +61,13 @@ export default function About() {
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/20 text-primary">
                   <FiTarget size={22} />
                 </span>
-                <h3 className="font-heading text-xl font-semibold text-white">
+                <h3 className="font-heading text-xl font-semibold text-foreground">
                   {ABOUT.focus.title}
                 </h3>
               </div>
               <ul className="space-y-4">
                 {ABOUT.focus.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-white/80">
+                  <li key={item} className="flex items-start gap-3 text-foreground/80">
                     <FiCheckCircle className="mt-1 shrink-0 text-accent" />
                     {item}
                   </li>
@@ -80,12 +78,12 @@ export default function About() {
 
           <Reveal delay={0.2}>
             <GlassCard className="flex h-full flex-col justify-between gap-6 bg-accent/10 p-8">
-              <p className="font-heading text-2xl font-semibold leading-snug text-white">
+              <p className="font-heading text-2xl font-semibold leading-snug text-foreground">
                 “Great software feels effortless.
                 <span className="text-gradient"> That takes real effort.”</span>
               </p>
               <div>
-                <p className="font-medium text-white">{SITE.name}</p>
+                <p className="font-medium text-foreground">{SITE.name}</p>
                 <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted">
                   <span aria-hidden>{SITE.flag}</span>
                   {SITE.location}

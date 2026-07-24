@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FiBriefcase, FiCheckCircle, FiMapPin } from "react-icons/fi";
@@ -27,7 +25,7 @@ export default function Experience() {
         />
 
         <div ref={ref} className="relative">
-          <div className="absolute left-5 top-0 h-full w-px bg-white/10 md:left-1/2" aria-hidden>
+          <div className="absolute left-5 top-0 h-full w-px bg-foreground/10 md:left-1/2" aria-hidden>
             <motion.div
               className="h-full w-full origin-top bg-accent"
               style={{ scaleY: lineProgress }}
@@ -63,9 +61,9 @@ export default function Experience() {
                       <span className="mb-3 inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                         {job.duration}
                       </span>
-                      <h3 className="font-heading text-xl font-bold text-white">{job.role}</h3>
+                      <h3 className="font-heading text-xl font-bold text-foreground">{job.role}</h3>
                       <p className="mt-0.5 text-sm font-medium text-secondary">{job.company}</p>
-                      <p className="mt-1 flex items-center gap-1.5 text-xs text-white/50">
+                      <p className="mt-1 flex items-center gap-1.5 text-xs text-foreground/50">
                         <FiMapPin size={12} className="shrink-0" />
                         {job.location}
                       </p>
@@ -73,7 +71,7 @@ export default function Experience() {
                         {job.achievements.map((achievement) => (
                           <li
                             key={achievement}
-                            className="flex items-start gap-2.5 text-sm leading-relaxed text-white/70"
+                            className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/70"
                           >
                             <FiCheckCircle className="mt-0.5 shrink-0 text-primary" />
                             {achievement}
