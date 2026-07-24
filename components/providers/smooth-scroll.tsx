@@ -1,7 +1,6 @@
-"use client";
-
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { lenisRef } from "@/lib/lenis";
 
 export default function SmoothScroll({
   children,
@@ -17,8 +16,9 @@ export default function SmoothScroll({
     const lenis = new Lenis({
       lerp: 0.1,
       duration: 1.2,
-      anchors: true,
+      anchors: false,
     });
+    lenisRef.current = lenis;
 
     let frame: number;
     const raf = (time: number) => {
@@ -30,6 +30,7 @@ export default function SmoothScroll({
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
