@@ -115,7 +115,7 @@ export default function TechStack() {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.06, duration: 0.35 }}
-                className="glass group flex flex-col items-center gap-3 rounded-2xl px-4 py-7 transition-colors hover:border-primary/50"
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card shadow-glass px-4 py-7 transition-colors hover:border-primary/50"
               >
                 <Icon
                   size={34}

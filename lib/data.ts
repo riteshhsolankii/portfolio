@@ -20,8 +20,8 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Stack", href: "/#stack" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
   { label: "Blog", href: "/blog" },
   { label: "Author", href: "/author" },
   { label: "Contact", href: "/#contact" },
@@ -107,6 +107,24 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Johnstone Electrics",
+    tagline: "Electrical services, Australia",
+    description:
+      "Custom PHP website with a strong focus on performance — page-speed optimized for fast load times and improved Core Web Vitals.",
+    stack: ["Custom PHP", "Page Speed"],
+    image: "/johnstoneelectrics.png",
+    url: "https://www.johnstoneelectrics.com.au/",
+  },
+  {
+    title: "Inner Eastern Psychology",
+    tagline: "Psychology practice, Melbourne, Australia",
+    description:
+      "Squarespace website for a psychology clinic — warm, professional and easy to navigate, optimized for enquiries and bookings.",
+    stack: ["Squarespace"],
+    image: "/inner-eastern-pschology.png",
+    url: "https://www.innereasternpsychology.com.au/",
+  },
   {
     title: "Gavin's Herbal Remedies",
     tagline: "WooCommerce store for a herbal wellness brand",
@@ -242,6 +260,110 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "github-more-than-just-code-storage",
+    title: "GitHub: More Than Just a Place to Store Code",
+    excerpt:
+      "Discover how GitHub goes beyond code hosting with Git, pull requests, Actions, Codespaces, Copilot, collaboration, and automation.",
+    date: "2026-07-26",
+    readTime: "5 min read",
+    emoji: "🐙",
+    image: "/blog/GitHub-More Than Just a Place to Store Code.png",
+    category: "Developer Tools",
+    tags: ["GitHub", "Git", "DevOps"],
+    content: [
+      {
+        type: "paragraph",
+        text: "When developers hear GitHub, the first thing that usually comes to mind is storing code online. But GitHub has grown far beyond simple repository hosting.",
+      },
+      {
+        type: "paragraph",
+        text: "Today, GitHub supports almost the entire software development lifecycle — from planning and writing code to reviewing, testing, deploying, and maintaining applications.",
+      },
+      { type: "heading", text: "What Makes GitHub Important?" },
+      {
+        type: "paragraph",
+        text: "At its core, GitHub is built around Git, a version control system that tracks changes to your code.",
+      },
+      {
+        type: "paragraph",
+        text: "For developers, this means you can create branches for new features, keep a history of changes, collaborate without overwriting each other's work, and use pull requests to review code before merging it.",
+      },
+      {
+        type: "paragraph",
+        text: "But modern GitHub adds much more on top of Git.",
+      },
+      { type: "heading", text: "GitHub Actions" },
+      {
+        type: "paragraph",
+        text: "GitHub Actions lets developers automate workflows directly from their repositories. You can automatically run tests, build an application, or deploy it whenever code is pushed or merged.",
+      },
+      {
+        type: "paragraph",
+        text: "This makes GitHub useful not only for version control but also for CI/CD and DevOps automation.",
+      },
+      { type: "heading", text: "GitHub Copilot" },
+      {
+        type: "paragraph",
+        text: "AI is now deeply integrated into GitHub through GitHub Copilot.",
+      },
+      {
+        type: "paragraph",
+        text: "Copilot can help developers generate and explain code, suggest edits, review changes, and work with coding agents across IDEs, GitHub, CLI tools, and MCP integrations.",
+      },
+      {
+        type: "paragraph",
+        text: "Instead of GitHub being only the place where finished code is pushed, AI is increasingly becoming part of the development process itself.",
+      },
+      { type: "heading", text: "GitHub Codespaces" },
+      {
+        type: "paragraph",
+        text: "Setting up a new project locally can take time. GitHub Codespaces provides preconfigured cloud development environments that developers can access through a browser or a supported IDE.",
+      },
+      {
+        type: "callout",
+        text: "\"It works on my machine.\" — the classic problem consistent cloud environments quietly solve.",
+      },
+      {
+        type: "paragraph",
+        text: "For teams, this reduces friction because everyone works with the same, consistent project environment no matter their local setup.",
+      },
+      { type: "heading", text: "Why Every Developer Should Learn GitHub" },
+      {
+        type: "paragraph",
+        text: "Learning GitHub isn't just about knowing git push and git pull.",
+      },
+      {
+        type: "list",
+        title: "A modern developer should understand:",
+        items: [
+          "Repositories, branches and commits",
+          "Pull requests and code reviews",
+          "Issues and project planning",
+          "GitHub Actions for CI/CD",
+          "Security tools",
+          "AI-assisted workflows",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "GitHub says its platform now has more than 180 million developers and 420 million repositories, showing how central it has become to modern software development.",
+      },
+      { type: "heading", text: "Final Thoughts" },
+      {
+        type: "paragraph",
+        text: "GitHub has evolved from a code-hosting platform into a complete developer ecosystem.",
+      },
+      {
+        type: "paragraph",
+        text: "Whether you're learning programming, building React applications, contributing to open source, working with a team, automating deployments, or experimenting with AI coding agents, GitHub is one of the most valuable platforms to understand.",
+      },
+      {
+        type: "callout",
+        text: "Don't use GitHub only to store your code. Use it to build, collaborate, automate, and showcase what you can create.",
+      },
+    ],
+  },
   {
     slug: "cursor-ai-vs-github-copilot",
     title: "Cursor AI vs GitHub Copilot: Which AI Coding Assistant is Better?",

@@ -1,90 +1,30 @@
-import { useRef } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { FiBriefcase, FiCheckCircle, FiMapPin } from "react-icons/fi";
-import { EXPERIENCE } from "@/lib/data";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 import SectionHeading from "@/components/ui/section-heading";
-import GlassCard from "@/components/ui/glass-card";
 import Reveal from "@/components/effects/reveal";
-import { cn } from "@/lib/utils";
+import ExperienceTimeline from "@/components/experience/experience-timeline";
 
 export default function Experience() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 70%", "end 60%"],
-  });
-  const lineProgress = useSpring(scrollYProgress, { stiffness: 80, damping: 25 });
-
   return (
     <section id="experience" className="section-padding relative">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-[1440px]">
         <SectionHeading
           eyebrow="Experience"
           title="The journey so far"
           subtitle="Roles and milestones that shaped how I build products today."
         />
 
-        <div ref={ref} className="relative">
-          <div className="absolute left-5 top-0 h-full w-px bg-foreground/10 md:left-1/2" aria-hidden>
-            <motion.div
-              className="h-full w-full origin-top bg-accent"
-              style={{ scaleY: lineProgress }}
-            />
-          </div>
+        <ExperienceTimeline />
 
-          <div className="space-y-12">
-            {EXPERIENCE.map((job, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div
-                  key={job.company}
-                  className={cn(
-                    "relative flex md:items-center",
-                    isLeft ? "md:justify-start" : "md:justify-end"
-                  )}
-                >
-                  <span
-                    className="absolute left-5 top-8 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-primary/50 bg-background shadow-glow md:left-1/2 md:top-1/2 md:-translate-y-1/2"
-                    aria-hidden
-                  >
-                    <FiBriefcase className="text-accent" size={16} />
-                  </span>
-
-                  <Reveal
-                    direction={isLeft ? "right" : "left"}
-                    className={cn(
-                      "ml-14 w-full md:ml-0 md:w-[calc(50%-3.5rem)]",
-                      isLeft ? "md:mr-auto" : "md:ml-auto"
-                    )}
-                  >
-                    <GlassCard className="p-7">
-                      <span className="mb-3 inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-                        {job.duration}
-                      </span>
-                      <h3 className="font-heading text-xl font-bold text-foreground">{job.role}</h3>
-                      <p className="mt-0.5 text-sm font-medium text-secondary">{job.company}</p>
-                      <p className="mt-1 flex items-center gap-1.5 text-xs text-foreground/50">
-                        <FiMapPin size={12} className="shrink-0" />
-                        {job.location}
-                      </p>
-                      <ul className="mt-4 space-y-2.5">
-                        {job.achievements.map((achievement) => (
-                          <li
-                            key={achievement}
-                            className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/70"
-                          >
-                            <FiCheckCircle className="mt-0.5 shrink-0 text-primary" />
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </GlassCard>
-                  </Reveal>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <Reveal className="mt-12 flex justify-center">
+          <Link
+            to="/experience"
+            className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 font-heading text-sm font-medium text-foreground backdrop-blur-xl transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+          >
+            View full experience
+            <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export default function Navbar() {
       <nav
         className={cn(
           "flex w-full max-w-[1440px] items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300",
-          scrolled ? "liquid-glass border-transparent" : "bg-transparent"
+          scrolled ? "bg-background/70 backdrop-blur-xl" : "bg-transparent"
         )}
         aria-label="Main navigation"
       >
