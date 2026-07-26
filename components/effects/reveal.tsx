@@ -13,13 +13,11 @@ export default function Reveal({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.7,
   className,
 }: {
   children: React.ReactNode;
   direction?: keyof typeof directions;
   delay?: number;
-  duration?: number;
   className?: string;
 }) {
   const offset = directions[direction];
@@ -30,7 +28,13 @@ export default function Reveal({
       opacity: 1,
       x: 0,
       y: 0,
-      transition: { duration, delay, ease: [0.21, 0.47, 0.32, 0.98] },
+      transition: {
+        type: "spring",
+        stiffness: 90,
+        damping: 18,
+        mass: 0.9,
+        delay,
+      },
     },
   };
 

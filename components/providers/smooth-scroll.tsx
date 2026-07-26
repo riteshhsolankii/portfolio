@@ -14,8 +14,9 @@ export default function SmoothScroll({
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.09,
+      duration: 1.15,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       anchors: false,
     });
     lenisRef.current = lenis;

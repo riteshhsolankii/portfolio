@@ -11,9 +11,8 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa6";
 import { SITE, ABOUT, BLOG_POSTS } from "@/lib/data";
-import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import BackToTop from "@/components/layout/back-to-top";
+import PageHero from "@/components/layout/page-hero";
 import Reveal from "@/components/effects/reveal";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/seo";
@@ -59,8 +58,13 @@ export default function Author() {
         path="/author"
         jsonLd={authorJsonLd}
       />
-      <Navbar />
-      <main id="main" className="section-padding pt-28 md:pt-32">
+      <PageHero
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Author" }]}
+        title={SITE.name}
+        subtitle="Web & React developer — WordPress, Elementor, Oxygen & Next.js."
+        image="/profile.jpg"
+      />
+      <main id="main" className="section-padding">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid items-start gap-10 lg:grid-cols-[360px_minmax(0,1fr)] lg:gap-16">
             <Reveal className="lg:sticky lg:top-28">
@@ -72,9 +76,9 @@ export default function Author() {
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
-                <h1 className="mt-6 text-center font-heading text-2xl font-bold text-foreground">
+                <p className="mt-6 text-center font-heading text-2xl font-bold text-foreground">
                   {SITE.name}
-                </h1>
+                </p>
                 <p className="mt-1 text-center text-sm font-medium text-accent">
                   {SITE.roles.join(" · ")}
                 </p>
@@ -100,9 +104,6 @@ export default function Author() {
 
             <div className="flex flex-col gap-12">
               <Reveal>
-                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-accent backdrop-blur-xl">
-                  Author
-                </span>
                 <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
                   Engineer by craft, designer at heart
                 </h2>
@@ -202,7 +203,6 @@ export default function Author() {
         </div>
       </main>
       <Footer />
-      <BackToTop />
     </>
   );
 }

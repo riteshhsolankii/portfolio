@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:shadow-glow"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass backdrop-blur-xl transition-all duration-300 will-change-transform hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow active:scale-[0.98]"
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
         <img

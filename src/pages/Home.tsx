@@ -1,4 +1,3 @@
-import Navbar from "@/components/layout/navbar";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import TechStack from "@/components/sections/tech-stack";
@@ -7,7 +6,6 @@ import Experience from "@/components/sections/experience";
 import Blog from "@/components/sections/blog";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/layout/footer";
-import BackToTop from "@/components/layout/back-to-top";
 import Seo from "@/components/seo";
 import { SITE } from "@/lib/data";
 
@@ -40,7 +38,6 @@ export default function Home() {
   return (
     <>
       <Seo path="/" jsonLd={personJsonLd} />
-      <Navbar />
       <main id="main">
         <Hero />
         <About />
@@ -51,7 +48,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <BackToTop />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Seo from "@/components/seo";
 
@@ -8,7 +7,6 @@ export default function NotFound() {
   return (
     <>
       <Seo title="Page not found" />
-      <Navbar />
       <main
         id="main"
         className="flex min-h-screen flex-col items-center justify-center px-[15px] text-center"

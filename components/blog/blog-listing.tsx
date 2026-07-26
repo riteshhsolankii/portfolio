@@ -17,14 +17,8 @@ function formatDate(date: string) {
 
 export default function BlogListing({
   activeCategorySlug = null,
-  eyebrow,
-  heading,
-  subtitle,
 }: {
   activeCategorySlug?: string | null;
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
 }) {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState<Sort>("newest");
@@ -72,18 +66,6 @@ export default function BlogListing({
 
   return (
     <div className="mx-auto max-w-[1440px]">
-      <Reveal className="mb-10 max-w-2xl">
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-accent backdrop-blur-xl">
-          {eyebrow}
-        </span>
-        <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
-          {heading}
-        </h1>
-        <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-          {subtitle}
-        </p>
-      </Reveal>
-
       <div className="grid gap-10 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
         <aside className="order-2 lg:order-1 lg:sticky lg:top-28 lg:self-start">
           <div className="liquid-glass rounded-2xl p-5">
@@ -156,7 +138,7 @@ export default function BlogListing({
                 <Reveal key={post.slug} delay={(i % 2) * 0.08}>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:shadow-glow"
+                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass backdrop-blur-xl transition-all duration-300 will-change-transform hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow active:scale-[0.98]"
                   >
                     <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br from-accent/15 via-transparent to-accent/5">
                       {post.image ? (
