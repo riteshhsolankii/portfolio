@@ -55,7 +55,7 @@ body {
 
 @layer components {
   .glass {
-    @apply border border-border bg-card shadow-glass backdrop-blur-xl;
+    @apply border border-border bg-card shadow-glass;
   }
 
   .liquid-glass {

@@ -60,7 +60,7 @@ export default function Contact() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass group flex items-center gap-4 rounded-2xl p-5 transition-all duration-300 hover:border-primary/50 hover:shadow-glow"
+                  className="glass group flex items-center gap-4 rounded-2xl p-5 transition-colors duration-300 hover:border-primary/50 hover:bg-foreground/[0.03]"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent">
                     <Icon size={22} />

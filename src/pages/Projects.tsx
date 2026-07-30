@@ -30,7 +30,7 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="mt-14 flex flex-col items-start gap-4 rounded-3xl border border-border bg-card p-8 shadow-glass backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-14 flex flex-col items-start gap-4 rounded-3xl border border-border bg-card p-8 shadow-glass sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="font-heading text-xl font-bold text-foreground">
                 Have a project in mind?

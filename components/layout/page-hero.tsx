@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import Reveal from "@/components/effects/reveal";
+import ScrollText from "@/components/effects/scroll-text";
 
 export type Crumb = { label: string; to?: string };
 
@@ -60,19 +61,23 @@ export default function PageHero({
               );
             })}
           </nav>
+        </Reveal>
 
-          <h1 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            {title}
-          </h1>
+        <ScrollText
+          as="h1"
+          text={title}
+          className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl"
+        />
 
-          {subtitle && (
+        {subtitle && (
+          <Reveal delay={0.1}>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
               {subtitle}
             </p>
-          )}
+          </Reveal>
+        )}
 
-          {children}
-        </Reveal>
+        {children && <Reveal delay={0.15}>{children}</Reveal>}
       </div>
     </section>
   );
