@@ -138,7 +138,7 @@ export default function BlogListing({
                 <Reveal key={post.slug} delay={(i % 2) * 0.08}>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass backdrop-blur-xl transition-all duration-300 will-change-transform hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow active:scale-[0.98]"
+                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-glass transition-all duration-300 will-change-transform hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow active:scale-[0.98]"
                   >
                     <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br from-accent/15 via-transparent to-accent/5">
                       {post.image ? (

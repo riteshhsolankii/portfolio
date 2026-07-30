@@ -28,7 +28,7 @@ export default function Projects() {
         <Reveal className="mt-10 flex justify-center">
           <Link
             to="/projects"
-            className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 font-heading text-sm font-medium text-foreground backdrop-blur-xl transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+            className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 font-heading text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
           >
             View all projects
             <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />

@@ -46,6 +46,63 @@ export const ABOUT = {
   },
 } as const;
 
+export type Service = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+export const SERVICES: Service[] = [
+  {
+    icon: "FiLayout",
+    title: "Web Design & Development",
+    description:
+      "Pixel-perfect, responsive websites that look great on every screen and load fast.",
+  },
+  {
+    icon: "SiWordpress",
+    title: "WordPress & Elementor",
+    description:
+      "Custom WordPress builds with Elementor, Oxygen and WooCommerce — easy to manage.",
+  },
+  {
+    icon: "SiReact",
+    title: "React & Next.js Apps",
+    description:
+      "Modern, interactive web apps built with React and Next.js for a premium feel.",
+  },
+  {
+    icon: "FiZap",
+    title: "Page Speed Optimization",
+    description:
+      "Core Web Vitals and performance tuning for faster, higher-ranking websites.",
+  },
+  {
+    icon: "SiWoocommerce",
+    title: "E-commerce Stores",
+    description:
+      "WooCommerce and Shopify stores built to sell — smooth checkout and easy management.",
+  },
+  {
+    icon: "FiTrendingUp",
+    title: "Landing Pages & Funnels",
+    description:
+      "High-converting landing pages and funnels designed to turn visitors into customers.",
+  },
+  {
+    icon: "SiFigma",
+    title: "Figma to Code",
+    description:
+      "Pixel-perfect conversion of Figma, XD or PSD designs into clean, responsive code.",
+  },
+  {
+    icon: "FiTool",
+    title: "Maintenance & Support",
+    description:
+      "Ongoing updates, fixes and improvements to keep your site fast, secure and fresh.",
+  },
+];
+
 export type TechCategory = {
   title: string;
   items: { name: string; icon: string }[];
